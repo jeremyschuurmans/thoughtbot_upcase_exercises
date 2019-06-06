@@ -71,4 +71,14 @@ RSpec.describe Person do
       expect(jeremy.initials).to eq("JS")
     end
   end
+
+  describe "capitalization" do
+    it "ensures that all input is capitalized" do
+      jeremy = Person.new("jeremy", "martin", "schuurmans")
+
+      expect(jeremy.full_name).to eq("Jeremy Martin Schuurmans")
+      expect(jeremy.full_name_with_middle_initial).to eq("Jeremy M. Schuurmans")
+      expect(jeremy.initials).to eq("JMS")
+    end
+  end
 end
