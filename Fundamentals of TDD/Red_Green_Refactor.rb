@@ -23,7 +23,7 @@ class Person
   end
 
   def full_name
-    @middle_name == "" ? @first_name + " " + @last_name : @first_name + " " + @middle_name + " " + @last_name
+    @middle_name == "" ? "#{@first_name} #{@last_name}" : "#{@first_name} #{@middle_name} #{@last_name}"
   end
 
   def full_name_with_middle_initial
