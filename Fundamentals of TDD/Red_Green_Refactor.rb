@@ -46,7 +46,11 @@ RSpec.describe Person do
     end
   end
 
-  describe "#full_name_with_middle_initial"
+  describe "#full_name_with_middle_initial" do
+    it "concatenates first name, first letter of middle name, and last name with spaces" do
+      
+    end
+  end
 
   describe "#initials"
 end
