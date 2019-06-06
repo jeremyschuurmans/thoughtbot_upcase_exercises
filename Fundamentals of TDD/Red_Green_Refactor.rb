@@ -58,5 +58,11 @@ RSpec.describe Person do
     end
   end
 
-  describe "#initials"
+  describe "#initials" do
+    it "concatenates first letter of first name, first letter of middle name, and first letter of last name with spaces" do
+      jeremy = Person.new("Jeremy", "Martin", "Schuurmans")
+
+      expect(jeremy.initials).to eq("JMS")
+    end
+  end
 end
