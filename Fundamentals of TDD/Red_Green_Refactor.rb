@@ -17,9 +17,9 @@ require "rspec/autorun"
 
 class Person
   def initialize(first_name, middle_name = nil, last_name)
-    @first_name = first_name
-    @middle_name = middle_name
-    @last_name = last_name
+    @first_name = first_name.capitalize
+    @middle_name = middle_name.capitalize if middle_name
+    @last_name = last_name.capitalize
   end
 
   def full_name
@@ -27,15 +27,11 @@ class Person
   end
 
   def full_name_with_middle_initial
-    @first_name + " " + @middle_name[0] + "." + " " + @last_name
+    "#{@first_name} #{@middle_name[0]}. #{@last_name}"
   end
 
   def initials
-    if @middle_name == ""
-      @first_name[0] + @last_name[0]
-    else
-      @first_name[0] + @middle_name[0] + @last_name[0]
-    end
+    @middle_name == "" ? "#{@first_name[0]}#{@last_name[0]}" : "#{@first_name[0]}#{@middle_name[0]}#{@last_name[0]}"
   end
 end
 
