@@ -33,6 +33,10 @@ class Person
   def full_name_with_middle_initial
     @first_name + " " + @middle_name[0] + "." + " " + @last_name
   end
+
+  def initials
+    @first_name[0] + @middle_name[0] + @last_name[0]
+  end
 end
 
 RSpec.describe Person do
@@ -63,6 +67,12 @@ RSpec.describe Person do
       jeremy = Person.new("Jeremy", "Martin", "Schuurmans")
 
       expect(jeremy.initials).to eq("JMS")
+    end
+
+    it "does not add extra spaces if middle name is missing" do
+      jeremy = Person.new("Jeremy", "", "Schuurmans")
+
+      expect(jeremy.initials).to eq("JS")
     end
   end
 end
