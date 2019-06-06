@@ -31,7 +31,7 @@ class Person
   end
 
   def full_name_with_middle_initial
-    @first_name + " " + @middle_name[0] + " " + @last_name
+    @first_name + " " + @middle_name[0] + "." + " " + @last_name
   end
 end
 
@@ -54,7 +54,7 @@ RSpec.describe Person do
     it "concatenates first name, first letter of middle name, and last name with spaces" do
       jeremy = Person.new("Jeremy", "Martin", "Schuurmans")
 
-      expect(jeremy.full_name_with_middle_initial).to eq("Jeremy M Schuurmans")
+      expect(jeremy.full_name_with_middle_initial).to eq("Jeremy M. Schuurmans")
     end
   end
 
