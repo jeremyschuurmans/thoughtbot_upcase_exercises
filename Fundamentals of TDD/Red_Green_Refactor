@@ -1,3 +1,5 @@
+require "rspec/autorun"
+
 # Use TDD principles to build out name functionality for a Person.
 # Here are the requirements:
 # - Add a method to return the full name as a string. A full name includes
